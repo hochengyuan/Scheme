@@ -1,0 +1,5 @@
+(define (filter pred L)
+      (if (NULL? L) '()
+          (if (pred (car L))
+              (cons (car L) (filter pred (cdr L))) (filter pred (cdr L)))))
+(filter even? '(1 2 3 4 1251 12300))

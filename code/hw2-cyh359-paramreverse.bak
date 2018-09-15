@@ -1,0 +1,4 @@
+(define (paramreverse f l)
+      (if (null? (cddr l)) (f (car (cdr l)) (car l))
+          (f (car l) (paramreverse f (cdr l)))))
+(paramreverse - '(2 1))

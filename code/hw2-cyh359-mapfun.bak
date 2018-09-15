@@ -1,0 +1,3 @@
+(define (mapfun FL L)
+      (if (NULL? FL) '() (if (NULL? L) '() (cons (apply (car FL) (car L)) (mapfun (cdr FL) (cdr L))))))
+(mapfun (list + -) '((1 2) (3 4) (4 5)))

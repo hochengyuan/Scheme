@@ -1,0 +1,5 @@
+(define (highest l k)
+      (letrec ((removex (lambda (l x) (if (= (car l) x) (cdr l) (cons (car l) (removex (cdr l) x))))))
+       (letrec ((findmax (lambda (x) (if (null? (cddr x)) (max (cadr x) (car x)) (max (car x) (findmax (cdr x)))))))
+      (if (= k 0) '() (cons (findmax l) (highest (removex l (findmax l)) (- k 1)))))))
+(highest '(1 2 5 4 3) 2)
